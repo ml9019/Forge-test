@@ -43,7 +43,7 @@ router.get("/user/profile", async (req, res) => {
       " " +
       profile.body.lastName +
       " " +
-      profile.body +
+      profile.body.length +
       " " +
       val,
     picture: profile.body.profileImages.sizeX40,
