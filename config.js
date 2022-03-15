@@ -22,7 +22,7 @@ module.exports = {
   credentials: {
     client_id: "GkLYqhtwrptdXGww69VXwZ2yYjTCOsXx", //process.env.FORGE_CLIENT_ID,
     client_secret: "9mXtWqh0p2A3l2BQ", // process.env.FORGE_CLIENT_SECRET,
-    callback_url: "http://localhost:3000/api/forge/callback/oauth", //process.env.FORGE_CALLBACK_URL
+    callback_url: "https://keo-projects.herokuapp.com/", //http://localhost:3000/api/forge/callback/oauth", //process.env.FORGE_CALLBACK_URL
   },
   scopes: {
     // Required scopes for the server-side application
