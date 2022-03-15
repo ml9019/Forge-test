@@ -36,6 +36,7 @@ router.get("/user/profile", async (req, res) => {
   } else {
     val = "Other user";
   }
+  const p1 = profile.body.profileImages.sizeX40;
 
   res.json({
     name:
@@ -46,7 +47,7 @@ router.get("/user/profile", async (req, res) => {
       profile.body.emailId +
       " " +
       val,
-    picture: profile.body.profileImages.sizeX40,
+    picture: p1
     test: "A",
   });
 });
