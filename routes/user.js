@@ -28,13 +28,24 @@ router.get("/user/profile", async (req, res) => {
   const internalToken = await oauth.getInternalToken();
   const user = new UserProfileApi();
   const profile = await user.getUserProfile(oauth.getClient(), internalToken);
+
+  let em = profile.body.emailId;
+  var val = "";
+  if (em.indexOf("@keoic.com") > 0) {
+    val = "KEO user";
+  } else {
+    val = "Other user";
+  }
+
   res.json({
     name:
       profile.body.firstName +
       " " +
       profile.body.lastName +
       " a " +
-      profile.body.emailId,
+      profile.body.emailId +
+      " " +
+      val,
     picture: profile.body.profileImages.sizeX40,
   });
 });
