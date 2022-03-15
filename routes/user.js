@@ -38,8 +38,7 @@ router.get("/user/profile", async (req, res) => {
   }
 
   if (em == "keotestuser@yahoo.com)") {
-    const img1 = document.querySelector("#bd");
-    img1.src =
+    document.getElementById("bd").src =
       "https://raw.githubusercontent.com/ml9019/Forge-test/main/resources/cake.PNG";
   }
 
