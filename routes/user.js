@@ -37,10 +37,10 @@ router.get("/user/profile", async (req, res) => {
     val = "Other user";
   }
 
-  if (em == "keotestuser@yahoo.com") {
-    //window.alert("sometext");
-    document.getElementById("sampleid").textContent = "!!!!!!!!!";
-  }
+  //   if (em == "keotestuser@yahoo.com") {
+  //     //window.alert("sometext");
+  //     document.getElementById("sampleid").textContent = "!!!!!!!!!";
+  //   }
 
   res.json({
     name:
