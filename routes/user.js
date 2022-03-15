@@ -55,7 +55,7 @@ router.get("/user/profile", async (req, res) => {
       profile.body.emailId +
       " " +
       val,
-    picture: p1,
+    picture: profile.body.profileImages.sizeX40,
     test: "A",
   });
 });
