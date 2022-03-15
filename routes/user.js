@@ -42,7 +42,7 @@ router.get("/user/profile", async (req, res) => {
       profile.body.firstName +
       " " +
       profile.body.lastName +
-      " a " +
+      "/n " +
       profile.body.emailId +
       " " +
       val,
