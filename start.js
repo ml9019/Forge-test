@@ -24,6 +24,7 @@ const cid = "GkLYqhtwrptdXGww69VXwZ2yYjTCOsXx";
 const sid = "9mXtWqh0p2A3l2BQ";
 const PORT = process.env.PORT || 3000;
 const config = require("./config");
+const { profile } = require("console");
 if (
   cid == null ||
   sid == null
