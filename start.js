@@ -33,7 +33,7 @@ if (
   console.error(
     "Missing FORGE_CLIENT_ID or FORGE_CLIENT_SECRET env. variables."
   );
-  // return;
+  return;
 }
 
 let app = express();
