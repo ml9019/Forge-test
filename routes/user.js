@@ -42,11 +42,12 @@ router.get("/user/profile", async (req, res) => {
       profile.body.firstName +
       " " +
       profile.body.lastName +
-      "/n " +
+      " " +
       profile.body.emailId +
       " " +
       val,
     picture: profile.body.profileImages.sizeX40,
+    test: "A",
   });
 });
 
