@@ -29,25 +29,22 @@ router.get("/user/profile", async (req, res) => {
   const user = new UserProfileApi();
   const profile = await user.getUserProfile(oauth.getClient(), internalToken);
 
-  
-    //ML:
-    let em = profile.body.emailId
-    var val = "";
-    if (em.indexOf("@keoic.com") > 0) {
-        val = "KEO user";
-    }
-    else {
-        val = "Other user";
-    }
-    //
-    
-    res.json({
-        name: profile.body.firstName + ' ' + profile.body.lastName,
-        picture: profile.body.profileImages.sizeX40,
-        email: profile.body.emailId,
-        userName: profile.body.userName,
-        isKEOuser: val
+  //ML:
+  let em = profile.body.emailId;
+  var val = "";
+  if (em.indexOf("@keoic.com") > 0) {
+    val = "KEO user";
+  } else {
+    val = "Other user";
+  }
+  //
 
-    });
-
+  res.json({
+    name: profile.body.firstName + " " + profile.body.lastName,
+    picture: profile.body.profileImages.sizeX40,
+    email: profile.body.emailId,
+    userName: profile.body.userName,
+    isKEOuser: val,
+  });
+});
 module.exports = router;
