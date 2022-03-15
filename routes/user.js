@@ -34,7 +34,7 @@ router.get("/user/profile", async (req, res) => {
       " " +
       profile.body.lastName +
       " a " +
-      profile.body.email,
+      profile.body.emailId,
     picture: profile.body.profileImages.sizeX40,
   });
 });
