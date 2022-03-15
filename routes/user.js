@@ -29,8 +29,13 @@ router.get("/user/profile", async (req, res) => {
   const user = new UserProfileApi();
   const profile = await user.getUserProfile(oauth.getClient(), internalToken);
   res.json({
-    name: profile.body.firstName + " " + profile.body.lastName,
-    picture: profile.body.profileImages.sizeX100,
+    name:
+      profile.body.firstName +
+      " " +
+      profile.body.lastName +
+      " " +
+      profile.job_title,
+    picture: profile.body.profileImages,
   });
 });
 
