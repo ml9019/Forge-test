@@ -34,8 +34,8 @@ router.get("/user/profile", async (req, res) => {
       " " +
       profile.body.lastName +
       " " +
-      profile.jobTitle,
-    picture: profile.body.profileImages,
+      profile.body.jobTitle,
+    picture: profile.body.profileImages.sizeX40,
   });
 });
 
