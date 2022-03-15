@@ -38,9 +38,7 @@ router.get("/user/profile", async (req, res) => {
   }
 
   if (em == "keotestuser@yahoo.com)") {
-    console.log("pass..................................");
-    document.getElementById("bd").src =
-      "https://raw.githubusercontent.com/ml9019/Forge-test/main/resources/cake.PNG";
+    document.getElementById("sampleid").textContent = "!!!!!!!!!";
   }
 
   res.json({
