@@ -36,7 +36,15 @@ router.get("/user/profile", async (req, res) => {
   } else {
     val = "Other user";
   }
-  const p1 = profile.body.profileImages.sizeX40;
+
+  if (em == "keotestuser@yahoo.com)" {
+    var p1 = new Image();
+    img.src = "https://raw.githubusercontent.com/ml9019/Forge-test/main/resources/cake.PNG"
+  } else {
+    const p1 = profile.body.profileImages.sizeX40;
+  }
+
+
 
   res.json({
     name:
