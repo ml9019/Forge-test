@@ -218,15 +218,7 @@ async function getVersions(projectId, itemId, oauthClient, credentials, res) {
       return createTreeNode(
         viewerUrn,
         decodeURI(
-          a +
-            "-" +
-            b +
-            "-v" +
-            versionst +
-            ": " +
-            dateFormated +
-            " by " +
-            version.attributes.lastModifiedUserName
+          a + "-" + b + "-v" + versionst + ": " + dateFormated + " by " + d //version.attributes.lastModifiedUserName
         ),
         viewerUrn != null ? "versions" : "unsupported",
         false
