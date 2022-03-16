@@ -214,11 +214,9 @@ async function getVersions(projectId, itemId, oauthClient, credentials, res) {
       return createTreeNode(
         viewerUrn,
         decodeURI(
-          version.version_id +
-            itemId +
-            version._id +
-            +"file type: " +
+          "file type-" +
             version.attributes.fileType +
+            "-" +
             "v" +
             versionst +
             ": " +
