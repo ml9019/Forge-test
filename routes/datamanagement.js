@@ -184,7 +184,7 @@ async function getFolderContents(
     // Covert JSON string into object
     const bookObject = JSON.parse(test2);
 
-    const test = "1"; //      contents.body.included[0].attributes.extension.data.modelGuid || "1";
+    const test = bookObject.included[0].attributes.extension.data.modelGuid; //"1"; //      contents.body.included[0].attributes.extension.data.modelGuid || "1";
     var name =
       item.attributes.name == null
         ? item.attributes.displayName //+ "_id: " + item.id
