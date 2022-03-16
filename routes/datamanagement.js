@@ -210,7 +210,7 @@ async function getVersions(projectId, itemId, oauthClient, credentials, res) {
   );
   res.json(
     versions.body.data.map((version) => {
-      const aa = versions.body.included[0].attributes.extension.data.modelGuid;
+      //const aa = versions.body.included[0].attributes.extension.data.modelGuid;
       const a = versions.body.jsonapi.version;
       const b = versions.body.links.self.href; //.included; //.data.modelGuid; //.data.modelGuid;
       //const c = versions.body.data.attributes.lastModifiedUserName;
