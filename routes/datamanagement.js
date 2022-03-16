@@ -180,7 +180,7 @@ async function getFolderContents(
     var name =
       item.attributes.name == null
         ? item.attributes.displayName
-        : item.attributes.name + items.id;
+        : item.attributes.name + item.id;
     if (name !== "") {
       // BIM 360 Items with no displayName also don't have storage, so not file to transfer
       return createTreeNode(item.links.self.href, name, item.type, true);
