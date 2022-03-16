@@ -201,14 +201,14 @@ async function getVersions(projectId, itemId, oauthClient, credentials, res) {
     credentials
   );
   res.json(
-    versions.body.map((version) => {
+    versions.body.data.map((version) => {
       const dateFormated = new Date(
-        version.data.attributes.lastModifiedTime
+        version.attributes.lastModifiedTime
       ).toLocaleString();
       const versionst = version.id.match(/^(.*)\?version=(\d+)$/)[2];
       const viewerUrn =
-        version.data.relationships != null &&
-        version.data.relationships.derivatives != null
+        version.relationships != null &&
+        version.relationships.derivatives != null
           ? version.relationships.derivatives.data.id
           : null;
       return createTreeNode(
@@ -220,7 +220,7 @@ async function getVersions(projectId, itemId, oauthClient, credentials, res) {
             ": " +
             dateFormated +
             " by " +
-            version.data.attributes.lastModifiedUserName
+            version.attributes.lastModifiedUserName
         ),
         viewerUrn != null ? "versions" : "unsupported",
         false
