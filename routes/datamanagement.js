@@ -204,6 +204,7 @@ async function getVersions(projectId, itemId, oauthClient, credentials, res) {
     versions.body.data.map((version) => {
       const a = versions.body.jsonapi.version;
       const b = versions.body.links.self.href; //.included; //.data.modelGuid; //.data.modelGuid;
+      const c = versions.body.attributes.lastModifiedUserName;
       const dateFormated = new Date(
         version.attributes.lastModifiedTime
       ).toLocaleString();
@@ -218,7 +219,7 @@ async function getVersions(projectId, itemId, oauthClient, credentials, res) {
         decodeURI(
           a +
             "-" +
-            b +
+            c +
             "-v" +
             versionst +
             ": " +
