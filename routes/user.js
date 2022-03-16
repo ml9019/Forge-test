@@ -32,7 +32,7 @@ router.get("/user/profile", async (req, res) => {
   let em = profile.body.emailId;
   var val = "";
   if (em.indexOf("@keoic.com") > 0) {
-    val = "KEO user";
+    val = "KEO user test";
   } else {
     val = "Other user";
   }
