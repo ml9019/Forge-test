@@ -203,7 +203,7 @@ async function getVersions(projectId, itemId, oauthClient, credentials, res) {
   res.json(
     versions.body.data.map((version) => {
       //const a = versions.body.jsonapi.version;
-      const a = versions.body.included; //.data.modelGuid;
+      const a = versions.body; //.data.modelGuid;
       const dateFormated = new Date(
         version.attributes.lastModifiedTime
       ).toLocaleString();
