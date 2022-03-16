@@ -201,32 +201,41 @@ async function getVersions(projectId, itemId, oauthClient, credentials, res) {
     credentials
   );
   res.json(
-    versions.body.data.map((version) => {
-      const dateFormated = new Date(
-        version.attributes.lastModifiedTime
-      ).toLocaleString();
-      const versionst = version.id.match(/^(.*)\?version=(\d+)$/)[2];
-      const viewerUrn =
-        version.relationships != null &&
-        version.relationships.derivatives != null
-          ? version.relationships.derivatives.data.id
-          : null;
+    versions.body.included.map((version) => {
       return createTreeNode(
         viewerUrn,
-        decodeURI(
-          version.included.length +
-            "-" +
-            "v" +
-            versionst +
-            ": " +
-            dateFormated +
-            " by " +
-            version.attributes.lastModifiedUserName
-        ),
+        decodeURI(version.included.data.modelGuid),
         viewerUrn != null ? "versions" : "unsupported",
         false
       );
     })
+
+    // versions.body.data.map((version) => {
+    //   const dateFormated = new Date(
+    //     version.attributes.lastModifiedTime
+    //   ).toLocaleString();
+    //   const versionst = version.id.match(/^(.*)\?version=(\d+)$/)[2];
+    //   const viewerUrn =
+    //     version.relationships != null &&
+    //     version.relationships.derivatives != null
+    //       ? version.relationships.derivatives.data.id
+    //       : null;
+    //   return createTreeNode(
+    //     viewerUrn,
+    //     decodeURI(
+    //       +
+    //         "-" +
+    //         "v" +
+    //         versionst +
+    //         ": " +
+    //         dateFormated +
+    //         " by " +
+    //         version.attributes.lastModifiedUserName
+    //     ),
+    //     viewerUrn != null ? "versions" : "unsupported",
+    //     false
+    //   );
+    // })
   );
 }
 
