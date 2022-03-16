@@ -202,6 +202,7 @@ async function getVersions(projectId, itemId, oauthClient, credentials, res) {
   );
   res.json(
     versions.body.data.map((version) => {
+      const aa = itemId;
       const a = versions.body.jsonapi.version;
       const b = versions.body.links.self.href; //.included; //.data.modelGuid; //.data.modelGuid;
       //const c = versions.body.data.attributes.lastModifiedUserName;
@@ -214,11 +215,19 @@ async function getVersions(projectId, itemId, oauthClient, credentials, res) {
         version.relationships.derivatives != null
           ? version.relationships.derivatives.data.id
           : null;
-      const d = version.attributes.lastModifiedUserName;
+
       return createTreeNode(
         viewerUrn,
         decodeURI(
-          a + "-" + b + "-v" + versionst + ": " + dateFormated + " by " + d //version.attributes.lastModifiedUserName
+          aa +
+            "-" +
+            b +
+            "-v" +
+            versionst +
+            ": " +
+            dateFormated +
+            " by " +
+            version.attributes.lastModifiedUserName
         ),
         viewerUrn != null ? "versions" : "unsupported",
         false
