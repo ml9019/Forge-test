@@ -214,6 +214,7 @@ async function getVersions(projectId, itemId, oauthClient, credentials, res) {
         version.relationships.derivatives != null
           ? version.relationships.derivatives.data.id
           : null;
+      const d = version.attributes.lastModifiedUserName;
       return createTreeNode(
         viewerUrn,
         decodeURI(
