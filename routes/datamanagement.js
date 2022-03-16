@@ -214,7 +214,7 @@ async function getVersions(projectId, itemId, oauthClient, credentials, res) {
       return createTreeNode(
         viewerUrn,
         decodeURI(
-          version.inckuded.daat.modelGuid +
+          version.inckuded.data.modelGuid +
             "-" +
             "v" +
             versionst +
