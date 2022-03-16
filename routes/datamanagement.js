@@ -204,7 +204,7 @@ async function getVersions(projectId, itemId, oauthClient, credentials, res) {
     versions.body.included.map((version) => {
       return createTreeNode(
         viewerUrn,
-        decodeURI(version.included.data.modelGuid),
+        decodeURI("A"),
         viewerUrn != null ? "versions" : "unsupported",
         false
       );
