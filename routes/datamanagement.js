@@ -131,7 +131,7 @@ async function getProjects(hubId, oauthClient, credentials, res) {
       }
       return createTreeNode(
         project.links.self.href,
-        project.attributes.name,
+        project.attributes.name + "_" + project.id,
         projectType,
         true
       );
@@ -180,7 +180,7 @@ async function getFolderContents(
     var name =
       item.attributes.name == null
         ? item.attributes.displayName
-        : item.attributes.name + " " + "test";
+        : item.attributes.name;
     if (name !== "") {
       // BIM 360 Items with no displayName also don't have storage, so not file to transfer
       return createTreeNode(item.links.self.href, name, item.type, true);
