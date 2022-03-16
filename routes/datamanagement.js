@@ -177,13 +177,19 @@ async function getFolderContents(
     credentials
   );
   const treeNodes = contents.body.data.map((item) => {
+    const test = contents.body.included.length;
     var name =
       item.attributes.name == null
         ? item.attributes.displayName //+ "_id: " + item.id
         : item.attributes.name; //+ "_id: " + item.id;
     if (name !== "") {
       // BIM 360 Items with no displayName also don't have storage, so not file to transfer
-      return createTreeNode(item.links.self.href, name, item.type, true);
+      return createTreeNode(
+        item.links.self.href,
+        name + "-" + test,
+        item.type,
+        true
+      );
     } else {
       return null;
     }
