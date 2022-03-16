@@ -202,6 +202,7 @@ async function getVersions(projectId, itemId, oauthClient, credentials, res) {
   );
   res.json(
     versions.body.data.map((version) => {
+      const a = versions.body.jsonapi.version;
       const dateFormated = new Date(
         version.attributes.lastModifiedTime
       ).toLocaleString();
@@ -214,7 +215,7 @@ async function getVersions(projectId, itemId, oauthClient, credentials, res) {
       return createTreeNode(
         viewerUrn,
         decodeURI(
-          +"-" +
+          a +
             "v" +
             versionst +
             ": " +
