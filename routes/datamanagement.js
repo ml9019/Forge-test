@@ -131,7 +131,7 @@ async function getProjects(hubId, oauthClient, credentials, res) {
       }
       return createTreeNode(
         project.links.self.href,
-        project.attributes.name, //+ "_" + project.id,
+        project.attributes.name,
         projectType,
         true
       );
@@ -214,8 +214,7 @@ async function getVersions(projectId, itemId, oauthClient, credentials, res) {
       return createTreeNode(
         viewerUrn,
         decodeURI(
-          version.version_id +
-            "v" +
+          "v" +
             versionst +
             ": " +
             dateFormated +
