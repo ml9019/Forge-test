@@ -216,6 +216,7 @@ async function getVersions(projectId, itemId, oauthClient, credentials, res) {
         decodeURI(
           version.version_id +
             itemId +
+            version._id +
             "v" +
             versionst +
             ": " +
