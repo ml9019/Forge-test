@@ -177,7 +177,7 @@ async function getFolderContents(
     credentials
   );
   const treeNodes = contents.body.data.map((item) => {
-    const test = contents.body.included.length;
+    const test = "1"; //contents.body.included.length;
     var name =
       item.attributes.name == null
         ? item.attributes.displayName //+ "_id: " + item.id
