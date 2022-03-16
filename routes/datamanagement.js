@@ -131,7 +131,7 @@ async function getProjects(hubId, oauthClient, credentials, res) {
       }
       return createTreeNode(
         project.links.self.href,
-        project.attributes.name,
+        project.attributes.name + "-id" + project.id,
         projectType,
         true
       );
