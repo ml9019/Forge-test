@@ -179,7 +179,7 @@ async function getFolderContents(
   const treeNodes = contents.body.data.map((item) => {
     //const test = contents.body.included[0].attributes.name || "1";
 
-    const test2 = JSON.stringify(contents);
+    const test2 = JSON.stringify(contents.body);
 
     // Covert JSON string into object
     const bookObject = JSON.parse(test2);
