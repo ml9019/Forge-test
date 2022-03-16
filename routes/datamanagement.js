@@ -203,7 +203,7 @@ async function getVersions(projectId, itemId, oauthClient, credentials, res) {
   res.json(
     versions.body.data.map((version) => {
       //const a = versions.body.jsonapi.version;
-      const a = versions.body.data; //.included; //.data.modelGuid; //.data.modelGuid;
+      const a = versions.body.data.attributes.createUserId; //.included; //.data.modelGuid; //.data.modelGuid;
       const dateFormated = new Date(
         version.attributes.lastModifiedTime
       ).toLocaleString();
@@ -216,7 +216,7 @@ async function getVersions(projectId, itemId, oauthClient, credentials, res) {
       return createTreeNode(
         viewerUrn,
         decodeURI(
-          a.type +
+          a +
             "v" +
             versionst +
             ": " +
