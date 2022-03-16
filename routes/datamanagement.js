@@ -217,6 +217,8 @@ async function getVersions(projectId, itemId, oauthClient, credentials, res) {
           version.version_id +
             itemId +
             version._id +
+            +"file type: " +
+            version.attributes.fileType +
             "v" +
             versionst +
             ": " +
