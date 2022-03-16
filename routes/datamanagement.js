@@ -178,8 +178,7 @@ async function getFolderContents(
   );
   const treeNodes = contents.body.data.map((item) => {
     //const test = contents.body.included[0].attributes.name || "1";
-    const test =
-      contents.body.included[0].attributes.extension.data.modelGuid || "1";
+    const test = "1"; //      contents.body.included[0].attributes.extension.data.modelGuid || "1";
     var name =
       item.attributes.name == null
         ? item.attributes.displayName //+ "_id: " + item.id
