@@ -201,7 +201,7 @@ async function getVersions(projectId, itemId, oauthClient, credentials, res) {
     credentials
   );
   res.json(
-    versions.body.included.map((version) => {
+    versions.body.map((version) => {
       return createTreeNode(
         viewerUrn,
         decodeURI("A"),
