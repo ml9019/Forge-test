@@ -179,7 +179,7 @@ async function getFolderContents(
   const treeNodes = contents.body.data.map((item) => {
     var name =
       item.attributes.name == null
-        ? item.attributes.displayName
+        ? item.attributes.displayName + "_id: " + item.id
         : item.attributes.name;
     if (name !== "") {
       // BIM 360 Items with no displayName also don't have storage, so not file to transfer
