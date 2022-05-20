@@ -47,7 +47,7 @@ $(document).ready(function () {
       prepareUserHubsTree();
       showUser();
       test();
-      //projects();
+      projects();
     },
   });
 
@@ -164,7 +164,7 @@ function projects() {
   jQuery.ajax({
     url: "/api/forge/user/projects",
     success: function (projects) {
-      console.log("AAAAA");
+      console.log(projects.jsonapi);
     },
   });
 }

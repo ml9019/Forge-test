@@ -96,8 +96,9 @@ router.get("/user/projects", async (req, res) => {
     "b.e09077b7-a3e3-46b8-8ac7-4499906199e0",
     oauth.getClient()
   );
-
-  res.json({});
+  let ml1 = projects.jsonapi;
+  console.log(ml1);
+  res.json({ test: "A", test2: "A2" });
 });
 
 module.exports = router;
