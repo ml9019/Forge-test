@@ -91,13 +91,11 @@ router.get("/user/projects", async (req, res) => {
   const user = new UserProfileApi();
   const profile = await user.getUserProfile(oauth.getClient(), internalToken);
 
-  let em = profile.body.emailId;
-  var val = "";
-  if (em.indexOf("@keoic.com") > 0) {
-    val = "KEO user test111111111111111";
-  } else {
-    val = "Other user";
-  }
+  const project = new ProjectsApi();
+  const projects = await project.getHubProjects(
+    "b.e09077b7-a3e3-46b8-8ac7-4499906199e0",
+    oauth.getClient()
+  );
 
   res.json({
     name:
