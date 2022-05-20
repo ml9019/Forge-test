@@ -150,7 +150,7 @@ function showUser() {
 
 function showUser2() {
   jQuery.ajax({
-    url: "/api/forge/user/profile",
+    url: "/api/forge/user/test",
     success: function (profile) {
       var img = '<img src="' + profile.picture + '" height="30px">';
       $("#userInfo").html(img + profile.name);
