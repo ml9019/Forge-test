@@ -89,7 +89,7 @@ router.get("/user/projects", async (req, res) => {
   const oauth = new OAuth(req.session);
   const internalToken = await oauth.getInternalToken();
   const user = new UserProfileApi();
-  const profile = await user.getUserProfile(oauth.getClient(), internalToken);
+  //const profile = await user.getUserProfile(oauth.getClient(), internalToken);
 
   const project = new ProjectsApi();
   const projects = await project.getHubProjects(
@@ -97,18 +97,7 @@ router.get("/user/projects", async (req, res) => {
     oauth.getClient()
   );
 
-  res.json({
-    name:
-      profile.body.firstName +
-      " " +
-      profile.body.lastName +
-      " " +
-      profile.body.emailId +
-      " " +
-      val,
-    picture: profile.body.profileImages.sizeX40,
-    test: "A",
-  });
+  res.json({});
 });
 
 module.exports = router;
