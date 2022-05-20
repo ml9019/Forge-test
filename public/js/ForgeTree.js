@@ -46,7 +46,7 @@ $(document).ready(function () {
       // finally:
       prepareUserHubsTree();
       showUser();
-      //test();
+      test();
     },
   });
 
@@ -153,7 +153,7 @@ function test() {
     url: "/api/forge/user/test",
     success: function (profile) {
       var img = '<img src="' + profile.picture + '" height="30px">';
-      $("#userInfo").html(img + profile.name);
+      $("#userInfoTest").html(img + profile.name);
     },
   });
 }
