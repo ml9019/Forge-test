@@ -93,12 +93,11 @@ router.get("/user/projects", async (req, res) => {
 
   const project = new ProjectsApi();
 
-  // const projects = await project.getHubProjects(
-  //   "b.e09077b7-a3e3-46b8-8ac7-4499906199e0",
-  //   oauth.getClient()
-  // );
-  // let ml1 = projects.jsonapi;
-  // //console.log(ml1);
+  const projects = await project.getHubProjects(
+    "b.e09077b7-a3e3-46b8-8ac7-4499906199e0",
+    oauth.getClient()
+  );
+
   res.json({ test: "A", test2: "A2" });
 });
 
