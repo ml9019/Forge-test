@@ -45,8 +45,8 @@ $(document).ready(function () {
 
       // finally:
       prepareUserHubsTree();
-      showUser();
-      showUser2();
+      //showUser();
+      test();
     },
   });
 
@@ -148,7 +148,7 @@ function showUser() {
   });
 }
 
-function showUser2() {
+function test() {
   jQuery.ajax({
     url: "/api/forge/user/test",
     success: function (profile) {
