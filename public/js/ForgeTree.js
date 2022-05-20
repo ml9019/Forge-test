@@ -45,7 +45,7 @@ $(document).ready(function () {
 
       // finally:
       prepareUserHubsTree();
-      //showUser();
+      showUser();
       test();
     },
   });
