@@ -47,6 +47,7 @@ $(document).ready(function () {
       prepareUserHubsTree();
       showUser();
       test();
+      projects();
     },
   });
 
