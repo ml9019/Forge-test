@@ -113,17 +113,17 @@ router.get("/user/projects", async (req, res) => {
       var response = JSON.parse(body);
       //console.log(response.jsonapi);
 
-      fs.writeFile("output/json-projects-name-id.txt", body, (err) => {
-        if (err) {
-          console.error(err);
-          return;
-        }
-      });
+      // fs.writeFile("output/json-projects-name-id.txt", body, (err) => {
+      //   if (err) {
+      //     console.error(err);
+      //     return;
+      //   }
+      // });
       console.log("completed!");
-      response.data.forEach((element) => {
-        //console.log(element.attributes.name + " : " + element.id);
-        map_project_id.set(element.attributes.name, element.id);
-      });
+      // response.data.forEach((element) => {
+      //   //console.log(element.attributes.name + " : " + element.id);
+      //   map_project_id.set(element.attributes.name, element.id);
+      // });
 
       // console.log(JSON.stringify(response.data));
     });
