@@ -157,3 +157,12 @@ function test() {
     },
   });
 }
+
+function projects() {
+  jQuery.ajax({
+    url: "/api/forge/user/projects",
+    success: function (req) {
+      console.log("success projects");
+    },
+  });
+}
