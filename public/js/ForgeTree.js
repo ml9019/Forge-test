@@ -160,6 +160,7 @@ function test() {
 }
 
 function projects() {
+  console.log("projects success!");
   jQuery.ajax({
     url: "/api/forge/user/projects",
     success: function (req) {
