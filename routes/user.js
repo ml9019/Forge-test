@@ -23,7 +23,8 @@ var https = require("follow-redirects").https;
 var fs = require("fs");
 //
 
-const { UserProfileApi, ProjectsApi } = require("forge-apis");
+const { UserProfileApi } = require("forge-apis");
+const { ProjectsApi } = require("forge-apis");
 
 const { OAuth } = require("./common/oauth");
 
@@ -95,7 +96,7 @@ router.get("/user/projects", async (req, res) => {
 
   const projects = await project.getHubProjects(
     "b.e09077b7-a3e3-46b8-8ac7-4499906199e0",
-    oauth.getClient()
+    internalToken
   );
 
   res.json({ test: "A", test2: "A2" });
