@@ -32,7 +32,7 @@ module.exports = {
       "data:read",
       "data:create",
       "data:write",
-      "account: read",
+      "account:read",
     ],
     // Required scope for the client-side viewer
     public: ["viewables:read"],
