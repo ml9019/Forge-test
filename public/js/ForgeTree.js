@@ -140,7 +140,7 @@ function prepareUserHubsTree() {
 
 function showUser() {
   jQuery.ajax({
-    url: "/api/forge/user/test",
+    url: "/api/forge/user/profile",
     success: function (profile) {
       var img = '<img src="' + profile.picture + '" height="30px">';
       $("#userInfo").html(img + profile.name);
