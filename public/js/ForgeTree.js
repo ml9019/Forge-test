@@ -148,7 +148,7 @@ function showUser() {
   });
 }
 
-function showUser() {
+function showUser2() {
   jQuery.ajax({
     url: "/api/forge/user/profile",
     success: function (profile) {
