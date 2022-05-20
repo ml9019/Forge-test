@@ -112,10 +112,8 @@ function prepareUserHubsTree() {
             b1.text.substring(b1.text.indexOf("v") + 1, b1.text.indexOf(":"))
           );
           return id1 > id2 ? 1 : -1;
-        } else if (a1.type !== b1.type)
-          return a1.icon < b1.icon
-            ? 1
-            : -1; // types are different inside folder, so sort by icon (files/folders)
+        } else if (a1.type !== b1.type) return a1.icon < b1.icon ? 1 : -1;
+        // types are different inside folder, so sort by icon (files/folders)
         else return a1.text > b1.text ? 1 : -1; // basic name/text sort
       },
       plugins: ["types", "state", "sort"],
@@ -142,6 +140,16 @@ function prepareUserHubsTree() {
 function showUser() {
   jQuery.ajax({
     url: "/api/forge/user/test",
+    success: function (profile) {
+      var img = '<img src="' + profile.picture + '" height="30px">';
+      $("#userInfo").html(img + profile.name);
+    },
+  });
+}
+
+function showUser() {
+  jQuery.ajax({
+    url: "/api/forge/user/profile",
     success: function (profile) {
       var img = '<img src="' + profile.picture + '" height="30px">';
       $("#userInfo").html(img + profile.name);
