@@ -17,6 +17,12 @@
 /////////////////////////////////////////////////////////////////////
 
 const express = require("express");
+
+// ML
+var https = require("follow-redirects").https;
+var fs = require("fs");
+//
+
 const { UserProfileApi } = require("forge-apis");
 
 const { OAuth } = require("./common/oauth");
@@ -33,6 +39,34 @@ router.get("/user/profile", async (req, res) => {
   var val = "";
   if (em.indexOf("@keoic.com") > 0) {
     val = "KEO user test";
+  } else {
+    val = "Other user";
+  }
+
+  res.json({
+    name:
+      profile.body.firstName +
+      " " +
+      profile.body.lastName +
+      " " +
+      profile.body.emailId +
+      " " +
+      val,
+    picture: profile.body.profileImages.sizeX40,
+    test: "A",
+  });
+});
+
+router.get("/user/test", async (req, res) => {
+  const oauth = new OAuth(req.session);
+  const internalToken = await oauth.getInternalToken();
+  const user = new UserProfileApi();
+  const profile = await user.getUserProfile(oauth.getClient(), internalToken);
+
+  let em = profile.body.emailId;
+  var val = "";
+  if (em.indexOf("@keoic.com") > 0) {
+    val = "KEO user test111111111111111";
   } else {
     val = "Other user";
   }
