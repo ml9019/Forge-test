@@ -23,7 +23,7 @@ var https = require("follow-redirects").https;
 var fs = require("fs");
 //
 
-const { UserProfileApi } = require("forge-apis");
+const { UserProfileApi, ProjectsApi } = require("forge-apis");
 
 const { OAuth } = require("./common/oauth");
 
